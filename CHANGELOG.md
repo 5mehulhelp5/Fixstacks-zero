@@ -1,5 +1,16 @@
 # Changelog: zerofront/zero
 
+## 1.3.11
+
+The AI Assistant's tools for other Zero modules moved out of `module-zero-ai-assistant` into one small package per module. After `composer update`, a store that used those tools runs `composer require` for each bridge it needs (listed below), then `bin/magento setup:upgrade` and `setup:di:compile`. Nothing else changes: tool names, permissions, commands and stored proposals are the same. The other packages only follow the version number.
+
+Packages that changed:
+
+- [`zerofront/module-zero-core`](https://github.com/zerofrontdev/module-zero-core/blob/main/CHANGELOG.md)
+- [`zerofront/module-zero-ai-assistant`](https://github.com/zerofrontdev/module-zero-ai-assistant/blob/main/CHANGELOG.md)
+- [`zerofront/module-zero-blog-ai-assistant`](https://github.com/zerofrontdev/module-zero-blog-ai-assistant/blob/main/CHANGELOG.md)
+- [`zerofront/module-zero-product-labels`](https://github.com/zerofrontdev/module-zero-product-labels/blob/main/CHANGELOG.md)
+
 ## 1.3.10
 
 A fix for stores that run `bin/magento setup:di:compile` (every production store): with Zero Mail 1.3.7, 1.3.8 or 1.3.9 the compiled store stopped on "Call to undefined method Zero\Mail\Model\Queue\MessageCodec::__set_state()", on every page and every `bin/magento` command. The other packages only follow the version number. Update with `composer update 'zerofront/*' -W`, then `bin/magento setup:upgrade` and `bin/magento setup:di:compile`.
