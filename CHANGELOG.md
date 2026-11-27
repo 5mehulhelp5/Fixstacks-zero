@@ -1,5 +1,15 @@
 # Changelog: zerofront/zero
 
+## 1.3.12
+
+Content Staging and Scheduling is free and open source from this release: `zerofront/module-zero-staging` and its AI Assistant bridge `zerofront/module-zero-staging-ai-assistant` come from Packagist, with no license key. A store that has the licensed 1.0.x package keeps working: `composer update` moves it to 1.3.12 and the license is no longer asked for. The other packages only follow the version number.
+
+Packages that changed:
+
+- [`zerofront/module-zero-ai-assistant`](https://github.com/zerofrontdev/module-zero-ai-assistant/blob/main/CHANGELOG.md)
+- [`zerofront/module-zero-staging-ai-assistant`](https://github.com/zerofrontdev/module-zero-staging-ai-assistant/blob/main/CHANGELOG.md)
+- [`zerofront/module-zero-staging`](https://github.com/zerofrontdev/module-zero-staging/blob/main/CHANGELOG.md)
+
 ## 1.3.11
 
 The AI Assistant's tools for other Zero modules moved out of `module-zero-ai-assistant` into one small package per module. After `composer update`, a store that used those tools runs `composer require` for each bridge it needs (listed below), then `bin/magento setup:upgrade` and `setup:di:compile`. Nothing else changes: tool names, permissions, commands and stored proposals are the same. The other packages only follow the version number.
